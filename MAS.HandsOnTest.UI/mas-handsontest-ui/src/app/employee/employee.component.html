@@ -1,0 +1,44 @@
+<div class="card"
+     style="width: 70%; margin:20px;">
+  <form [formGroup]="searchForm"
+        (ngSubmit)="getEmployees(searchForm.value)">
+    <div class="form-group form-inline"
+         style="margin:10px;">
+      Search: <input id='id'
+             class="form-control ml-2"
+             type="text"
+             formControlName='id' />
+      <button class="btn btn-primary"
+              style="margin:10px;"
+              type="submit">Get Employees</button>
+    </div>
+  </form>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Contract Type Name</th>
+        <th scope="col">Role Id</th>
+        <th scope="col">Role Name</th>
+        <th scope="col">Role Description</th>
+        <th scope="col">Hourly Salary</th>
+        <th scope="col">Monthly Salary</th>
+        <th scope="col">Annual Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <th>{{employee.id }}</th>
+        <td>{{employee.name}}</td>
+        <td>{{employee.contractTypeName}}</td>
+        <td>{{employee.roleId}}</td>
+        <td>{{employee.roleName}}</td>
+        <td>{{employee.roleDescription}}</td>
+        <td>{{employee.hourlySalary}}</td>
+        <td>{{employee.monthlySalary}}</td>
+        <td>{{employee.annualSalary}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
